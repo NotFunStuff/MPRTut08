@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Hello"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yourName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="15dp"
+            android:text="NotFunStuff"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toEndOf="@+id/hello"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hello"
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size"
+            app:tint="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/white_rectangle_background"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/hello">
+
+            <EditText
+                android:id="@+id/searchBox"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Search"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/search_icon_background"
+                android:padding="6dp"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@id/navbar">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:paddingTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/comfort"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_rectangle_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/health"
+                    app:layout_constraintTop_toBottomOf="@+id/finance"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="10dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:padding="8dp"
+                        android:src="@drawable/comfort">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Comfort"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/health"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_rectangle_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/comfort"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/goal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:padding="8dp"
+                        android:src="@drawable/health">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/finance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/white_rectangle_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    app:layout_constraintLeft_toRightOf="@+id/goal"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:padding="8dp"
+                        android:src="@drawable/finance">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Finance"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/goal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_background"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/finance"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:padding="8dp"
+                        android:src="@drawable/goals"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Goals"
+                        android:textSize="20sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trending_background"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/option"
+                app:layout_constraintVertical_bias="1.0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_background"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="TRENDING"
+                    android:textSize="16sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/heart"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/btn_star"
+                    app:tint="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text="12345678901234567890dddddddddasd NotFunStuff say hello to hime-sensei 2tr5 tt Fizz Wowk1305 :))))))))))))))))))))))))))))))))))"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/heart" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorWhite"
+        app:itemIconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll"
+        app:menu="@menu/menu_bottom_navigator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
